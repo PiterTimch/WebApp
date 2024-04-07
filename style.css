@@ -5,6 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: rgb(205, 208, 255);
 }
 
 .container {
@@ -26,4 +27,8 @@ button img {
 .animated {
     transform: scale(0.9);
     transition: transform 0.1s; 
+}
+
+button:focus {
+    outline: none;
 }
