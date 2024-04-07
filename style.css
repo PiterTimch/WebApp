@@ -32,3 +32,9 @@ button img {
 button:focus {
     outline: none;
 }
+
+@media only screen and (hover:none) {
+    button:active {
+        outline: none;
+    }
+}
