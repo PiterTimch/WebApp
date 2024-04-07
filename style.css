@@ -20,4 +20,10 @@ button {
 button img {
     width: 200px;
     height: auto;
+    border-radius: 50%;
+}
+
+.animated {
+    transform: scale(0.9);
+    transition: transform 0.1s; 
 }
