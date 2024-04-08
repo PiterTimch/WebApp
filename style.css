@@ -11,6 +11,11 @@ body {
 .container {
     text-align: center;
 }
+.menuContainer {
+
+    text-align: center;
+
+}
 
 button {
     border: none;
@@ -43,3 +48,18 @@ button:focus {
     width: device-width;
     zoom: 1.0;
 }
+
+/* Код, що вже існує */
+
+.menuContainer {
+    text-align: center;
+    position: fixed; /* Змінено на fixed */
+    bottom: 100px; /* Зсув знизу відступу */
+    left: 0; /* Вирівнювання зліва */
+    width: 100%; /* Ширина контейнера */
+    z-index: 999; /* Забезпечення найвищого рівня z-index, щоб контейнер завжди був поверх іншого контенту */
+}
+
+/* Код, який вже існує */
+
+
