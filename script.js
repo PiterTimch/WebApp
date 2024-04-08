@@ -78,4 +78,4 @@ setInterval(() => {
         energy = energyMax;
         clickEnergy.textContent = energy;
     }
-}, 500);
+}, 2000);
