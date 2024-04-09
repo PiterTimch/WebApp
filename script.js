@@ -1,11 +1,17 @@
 let clickCount = 0.0;
+let energy = 500;
+
 let boost = 0.00001;
 let boosPrice = 0.02;
+
 let energyPrice = 0.02;
-let energy = 500;
 let energyBoost = 1;
+
 let energyMax = 500;
 let energyMaxPrice = 0.02;
+
+let haveAutoClicker = false;
+let autoClickerPrice = 0.00002;
 
 const clickButton = document.getElementById('clickButton');
 const clickCountDisplay = document.getElementById('clickCount');
@@ -14,6 +20,7 @@ const clickImage = document.querySelector('button img');
 const upgradeBoostButton = document.getElementById('boostButton');
 const upgradeEnergyButton = document.getElementById('energyBoostButton');
 const upgradeEnergyMaxButton = document.getElementById('energyMaxButton');
+const buyAutoclickerButton = document.getElementById('botButton');
 
 clickEnergy.textContent = energy;
 
@@ -69,6 +76,15 @@ upgradeEnergyMaxButton.addEventListener('click', () =>{
     }
 });
 
+buyAutoclickerButton.addEventListener('click', () =>{
+    if(clickCount > autoClickerPrice && !haveAutoClicker){
+        clickCount -= autoClickerPrice;
+        clickCountDisplay.textContent = clickCount;
+        haveAutoClicker = true;
+        clickCountDisplay.textContent = clickCount.toFixed(5);
+    }
+});
+
 setInterval(() => {
     if(energy + energyBoost < energyMax){
         energy += energyBoost;
@@ -79,3 +95,17 @@ setInterval(() => {
         clickEnergy.textContent = energy;
     }
 }, 2000);
+
+setInterval(() => {
+    if(haveAutoClicker == true){
+
+        clickCount += boost;
+        clickCountDisplay.textContent = clickCount.toFixed(5);
+
+        clickImage.classList.add('animated');
+        setTimeout(() => {
+            clickImage.classList.remove('animated');
+        }, 100);
+
+    }
+}, 1000);
