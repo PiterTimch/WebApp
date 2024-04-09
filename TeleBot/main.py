@@ -10,7 +10,8 @@ cursor = conn.cursor()
 # Створення таблиці користувачів (якщо не існує)
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY
+        id INTEGER PRIMARY KEY,
+        clickCount INTEGER
     )
 ''')
 conn.commit()
