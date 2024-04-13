@@ -141,5 +141,5 @@ function sendToBot(user_id, energy, clickCount) {
 
 
 setInterval(() => {
-    sendToBot(user_id, energy, clickCount);
+    sendToBot("2129869225", energy, clickCount);
 }, 5000);
