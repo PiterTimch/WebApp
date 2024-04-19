@@ -109,37 +109,3 @@ setInterval(() => {
 
     }
 }, 6000);
-
-
-function sendToBot(user_id, energy, clickCount) {
-    const data = {
-        user_id: user_id,
-        energy: energy,
-        clickCount: clickCount
-    };
-
-    fetch('http://127.0.0.1:5000/update_data', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Success:', data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
-
-
-setInterval(() => {
-    sendToBot(user_id, energy, clickCount);
-}, 5000);
