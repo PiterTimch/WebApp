@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(205, 208, 255);
+}
+
+.container {
+    text-align: center;
+}
+.menuContainer {
+    text-align: center;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+button img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.animated {
+    transform: scale(0.9);
+    transition: transform 0.1s; 
+}
+
+button:focus {
+    outline: none;
+}
+
+@media only screen and (hover:none) {
+    button:active {
+        outline: none;
+    }
+}
+
+@viewport {
+    width: device-width;
+    zoom: 1.0;
+}
+
+.menuContainer {
+    text-align: center;
+    position: fixed;
+    bottom: 100px;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
